@@ -1,0 +1,573 @@
+-- Creating database;
+
+ create database projectstudent;
+
+
+-- using database;
+
+ use projectstudent;
+
+-- to view databases;
+
+ Show databases;  
+
+-- Table Creation Statement for stud_info:
+ 
+ Create table student_information
+ (Stud_id int primary key, Stud_Name varchar(25),   
+ City_State varchar(25), Age int, Roll_no int, 
+ Community varchar(10), Course_ID int);
+
+-- Table Creation for course_information
+
+ create table course_information(course_id int,course_name varchar(10));
+
+-- Table Creation for marks_info 
+
+ create table marks_info(marks_id int, 
+student_id int,finance int,
+ cost int,corporate int);
+
+-- Show all tables in project_student
+
+ show tables;
+
+--  INSERT VALUES INTO TABLE 1  (Student_information)
+
+ insert into student_information values
+ (1, 'Vasanth', 'Erode', 21, 13001, 'BC', 1),
+ (2, 'Guru', 'Tiruppur', 20, 13002, 'MBC', 1),
+ (3, 'Gokul', 'Tiruchirapalli', 18, 13003, 'SC', 1),
+ (4, 'Mani', 'Kumarapalayam',24, 13004, 'BC', 1),
+ (5, 'Moorthy', 'Salem', 18, 13005, 'MBC', 2),
+ (6, 'Amutha', 'Chennai', 17, 13006, 'SC', 2),
+ (7, 'Jaga', 'Madurai', 24, 13007, 'BC', 2),
+ (8, 'Pavithra', 'Erode', 23, 13008, 'MBC', 2),
+ (9, 'Arthi', 'Tiruppur', 17, 13009, 'SC', 3),
+ (10, 'Kabilan', 'Tiruchirapalli', 24, 13010, 'BC', 3),
+ (11, 'Manasi', 'Kumarapalayam',17, 13011, 'MBC', 3),
+ (12, 'Suja', 'Salem', 23, 13012, 'SC', 3),
+ (13, 'Arun', 'Chennai', 22, 13013, 'BC', 3),
+ (14, 'Deepa', 'Madurai', 20, 13014, 'MBC', 1),
+ (15, 'Sindhu', 'Erode', 22, 13015, 'SC', 1),
+ (16, 'Madhavi, "Tiruppur', 20, 13016, 'BC', 1),
+ (17, 'Swetha, "Tiruchirapalli', 17, 13017, 'MBC', 1),
+ (18, 'Selvi, Kumarapalayam', 22, 13018, 'SC', 3),
+ (19, 'Pooja', 'Salem', 19, 13019, 'BC', 1),
+ (20, 'Lakshmi', 'Chennal', 17, 13020, 'MBC', 2),
+ (21, 'Veeramani', 'Madurai', 21, 13021, 'SC', 1),
+ (22, 'Pandian', Erode', 21, 13022, 'BC', 1),
+ (23, 'Veera', 'Tiruppur', 20, 13023, 'MBC', 2),
+ (24, 'Devi', 'Tiruchirapalli', 20, 13024, 'SC', 3),
+ (25, 'Devan', 'Kumarapalayam', 21, 13025, 'BC', 1),
+ (26, Keerthi', 'Salem', 17, 13026, 'MBC', 2),
+ (27, 'Venkatesh', 'Chennal', 24, 13027, 'SC', 1),
+ (28, 'Raja', 'Madurai', 24, 13028, 'SC', 3);
+
+-- INSERT VALUES INTO TABLE 2 (COURSE_INFORMATION)
+
+ insert into course_information values (1,'CMA'),(2,'CA'),(3,'CS’);
+
+-- INSERT VALUES INTO TABLE 3 (MARKS_INFO)
+
+ insert into marks_infovalues
+ (14001, 1, 75, 76, 65),
+ (14002, 2, 92, 90, 19),
+ (14003, 3, 38, 37, 46),
+ (14004, 4, 39, 90, 58),
+ (14005, 5, 34, 89, 20),
+ (14006, 6, 44, 38, 60),
+ (14007, 7, 50, 26, 98),
+ (14008, 8, 59, 78, 82),
+ (14009, 9, 89, 47, 88),
+ (14010, 10, 20, 25, 100),
+ (14011, 11, 74, 50, 100),
+ (14012, 12, 81, 62, 31),
+ (14013, 13, 60, 19, 33),
+ (14014, 14, 77, 22, 23),
+ (14015, 15, 68, 38, 35),
+ (14016, 16, 31, 60, 83),
+ (14017, 17, 83, 53, 79),
+ (14018, 18, 37, 79, 88),
+ (14019, 19, 55, 76, 76),
+ (14020, 20, 25, 40, 81),
+ (14021, 21, 38, 87, 48),
+ (14022, 22, 84, 63, 72),
+ (14023, 23, 80, 44, 64),
+ (14024, 24, 53, 46, 59),
+ (14025, 25, 79, 48, 94),
+ (14026, 26, 48, 66, 70),
+ (14027, 27, 61, 45, 74),
+ (14028, 28, 24, 95, 58);
+
+--  To add a column in a table (Course information )
+
+ alter table course_information add course_details varchar(30);
+
+-- to modify column 
+
+alter table course_information modify column course_details char(30);
+
+-- To DROP COLUMN
+
+ ALTER TABLE Course_information DROP COLUMN course_details;
+
+-- NOT NULL CONSTRAINT
+
+alter table student_information modify stud_name varchar(25) not null;
+
+-- MODIFY DATA TYPE
+
+ Alter table course_information modify course_id bigint;
+
+
+-- UNIQUE CONSTRAINT
+
+ alter table student_information add unique (roll_no);
+
+-- PRIMARY KEY CONSTRAINT
+
+alter table student_information add primary key (stud_id);
+
+-- DESCRIBE TABLE
+
+ Describe Table_name (or) Desc table_name;
+
+-- UPDATE TABLE TO CHANGE VALUES
+
+ Update course_info Set course_name = 'CMA Updated' Where course_id = 1;
+
+-- DELETE STATEMENTS
+
+Delete from course_information Where course_id = 4;
+
+-- GENERAL FUNCTION IN SQL 
+
+-- USING WHERE 
+
+ Select * from student_information Where Age > 23;
+
+-- USING AND 
+
+Select * from student_information Where Community = 'MBC' AND Course_ID = 1;
+
+
+-- BETWEEN 
+
+Select * from student_information Where Roll_no BETWEEN 13010 AND 13012;
+
+-- OR 
+
+ Select * from student_information Where City_State = 'Erode' OR City_State = 'Chennai’;
+
+
+-- IN
+
+ Select * from student_information Where Community IN ('BC', 'MBC’);
+
+--  NOT IN
+
+ Select * from student_information Where city_state not in ('chennai','tiruppur','kumarapalayam','madurai','erode','tiruchirapalli’);
+
+--  Comparison Operators ( > , < , >= , <= , < > , !=)
+
+Select * from student_information Where Age >= 23;
+
+Select * from student_information Where Roll_no < 13004;
+
+-- USING COUNT 
+
+ Select Count(*) as Total_BC_Students from student_information WHERE Community = 'BC';
+
+-- USING  DISTINCT
+
+ Select count(Distinct City_State) as Unique_Cities_States from student_information;
+
+
+-- ORDER BY
+
+ Select * from student_information Order by Age ASC;
+
+ Select * from student_information order by  Roll_no DESC;
+
+-- GROUP BY
+
+ Select Community, Count(*) as Total_Students from student_information GROUP BY Community;
+
+-- LIMIT and OFFSET
+
+ Select * from student_information LIMIT 3;
+
+ Select * from student_information LIMIT 5 OFFSET 5;
+
+-- LIKE AND NOT LIKE
+
+-- Retrieve students with names containing ‘eer’
+
+ Select * from student_information Where Stud_Name LIKE '%eer%’;
+
+-- Retrieve students with names not containing ‘a’:
+ 
+Select * from student_information Where Stud_Name NOT LIKE '%a%';
+
+-- (********* CALCULATED FUNCTIONS *********)
+
+-- Calculate the total Finance marks for all students:
+ 
+Select SUM(Finance) as Total_Finance_Marks from Marks_info;
+
+-- Calculate the average Cost marks for all students:
+ 
+Select Avg(Cost) as Average_Cost_Marks from marks_info;
+
+--  Use the Round function in SQL to round the calculated average
+
+ Select round(Avg(Cost),0) as Average_Cost_Marks from marks_info;
+
+--  Find the minimum Corporate marks among all students:
+
+ Select MIN(Corporate) as Minimum_Corporate_Marks from Marks_info;
+
+-- Find the maximum Finance marks among all students:
+
+ Select MAX(Finance) as Maximum_Finance_Marks from Marks_info;
+
+-- Count the number of rows (students) in the Marks_info table:
+
+ Select COUNT(*) as Total_Students from Marks_info;
+
+-- (********* STRING FUNCTIONS *********)
+
+-- Convert the Stud_Name column to lowercase: 
+
+ Select LOWER(Stud_Name) as Lowercase_Name from student_information; 
+
+--  Convert the City_State column to uppercase:
+
+ Select UPPER(City_State) as Uppercase_City from student_information;
+
+--  Retrieve the leftmost 4 characters of the Stud_Name column:
+
+ Select LEFT(Stud_Name, 4) as Left_name from student_information;
+
+--  Retrieve the rightmost 5 characters of the City_State column:
+
+ Select RIGHT(City_State, 5) as Rightmost_City from student_information;
+
+--  Combine `Stud_Name` and `City_State` into a single column:
+
+ Select CONCAT(Stud_Name, ', ', City_State) as Namewith_Native from student_information;
+
+--  Remove leading and trailing spaces from the `Community` column:
+
+ Select TRIM(Community) as Trimmed_Community from student_information;
+
+--  Calculate the character length of the Stud_Name column:
+
+ Select stud_name, CHAR_LENGTH(Stud_Name) as Name_Length from student_information;
+
+-- Retrieve a Mid_name of `stud_Name` starting from the 3rd character and 5 characters long:
+
+ Select MID(stud_name, 3, 5) as Mid_name from student_information;
+
+--  Calculate the length (in characters) of the Community column:
+
+ Select community, LENGTH(Community) as Community_Length from student_information;
+
+-- (********* LOGICAL FUNCTION *********)
+
+-- Use the IF function to classify students as ‘Pass’ or ‘Fail’ based on their Finance marks
+
+Select Stud_ID, Finance, IF(Finance >= 35, 'Pass', 'Fail') as Pass_Status from Marks_info;
+
+--  Classify students as ‘Pass’ if they scored 35 or above in  Finance, Cost and corporate:
+
+ Select Stud_ID, Finance, Cost, corporate, IF(Finance >= 35 AND Cost >= 35 and corporate>=35, 'Pass’ , 'Fail') as Status from Marks_info;
+
+-- Classify students as ‘Pass’ if they scored 60 or above in either ‘Finance’ or ‘Cost’:
+
+ Select Stud_ID, Finance, Cost, IF(Finance >= 60 OR Cost >= 60, 'Pass', 'Fail') as Pass_Status from Marks_info;
+
+-- Count the number of students who passed Finance with a score of 70 or above:
+
+ Select COUNT(*) as Passed_Finance_Count from Marks_info where Finance >= 70;
+
+-- (INNER JOIN ) This query retrieves student names and the corresponding course names they are enrolled in, but only for students who are enrolled in courses.
+
+ Select student_information.Stud_id, student_information.Stud_Name, Course_information.course_name
+ from student_information
+ INNER JOIN Course_information ON student_information.Course_ID = Course_information.course_id;
+
+--  If you want to retrieve all students, including those not enrolled in any courses, you can use a LEFT JOIN:
+
+-- I inserted a dummy row in the student_information to show the difference of the left join 
+
+insert into student_information (stud_id, stud_name, city_state, age, roll_no, community)values (29,'Praveen','Mettur',26,13029,'MBC');
+
+ Select student_information.Stud_id, student_information.Stud_Name,  Course_information.course_name
+ from student_information
+ LEFT JOIN Course_information ON student_information.Course_ID = Course_information.course_id;
+
+--  Similarly, you can use a RIGHT JOIN to retrieve all course names, including those without students:
+-- I inserted a dummy row in the Course_information to show the difference of the Right join
+ 
+insert into Course_information values (4,'SQL'); 
+
+Select student_information.Stud_id, student_information.Stud_Name, 
+Course_information.course_name
+ from student_information
+ RIGHT JOIN Course_information ON student_information.Course_ID = 
+Course_information.course_id;
+
+-- CROSS JOIN 
+
+ Select student_information.Stud_id, student_information.Stud_Name, Course_information.course_name
+ from student_information
+ CROSS JOIN Course_information;
+
+-- FULL OUTER JOIN 
+
+ Select student_information.Stud_id, student_information.Stud_Name, Course_information.course_name
+ from student_information
+ LEFT JOIN Course_information ON student_information.Course_ID = Course_information.course_id
+ UNION
+
+ select student_information.Stud_id, student_information.Stud_Name, Course_information.course_name
+ from student_information
+ RIGHT JOIN Course_information ON student_information.Course_ID = Course_information.course_id;
+
+-- CASE WHEN THEN END
+
+Select Stud_id, Stud_Name, age,
+ CASE 
+WHEN Age >= 20 THEN 'Old'
+ WHEN Age < 20 THEN 'Young'
+ ELSE 'Unknown'
+ END as Age_Group
+ from student_information;
+
+-- Double CASE with END Statement
+
+ Select Stud_id, Stud_Name, age, roll_no,
+ CASE 
+WHEN Age >= 20 THEN
+ CASE
+ WHEN Roll_no < 13010 THEN 'Senior'
+ ELSE 'Junior'
+ END
+ ELSE 'Unknown'
+ END AS Student_Status
+ from student_information;
+
+-- CASE with AND Statement
+
+ Select Stud_id, Stud_Name, age, roll_no,
+ CASE 
+WHEN Age >= 20 AND Roll_no > 13010 THEN 'Senior'
+ WHEN Age < 20 AND Roll_no <= 13010 THEN 'Junior'
+ ELSE 'Unknown'
+ END AS Student_Status
+ from student_information;
+
+--  CASE with OR Statement
+
+ Select Stud_id, Stud_Name, age, roll_no,
+ CASE 
+WHEN Age >= 20 OR Roll_no > 13010 THEN 'Senior'
+ WHEN Age < 20 OR Roll_no <= 13010 THEN 'Junior'
+ ELSE 'Unknown'
+ END AS Student_Status
+ from student_information;
+
+
+-- (Having )  This query uses ‘CASE’ with  ‘HAVING’  to categorize students based on city_state from salem and Average Marks above 60%
+
+
+ Select s.stud_id, s.stud_name, s.city_state, s.age, s.community, c.course_id, c.course_name,m.finance, m.cost, 
+ m.corporate, (m.finance+ m.cost+ m.corporate) as Total_marks,
+ concat(round((m.finance+ m.cost+ m.corporate)/3,0),"%") as Average_marks 
+ from student_information as s INNER JOIN Course_information as c on s.course_id = c.course_id
+ INNER JOIN marks_info as m on s.stud_id = m.stud_id
+ Where city_state = 'salem’ 
+ Having average_marks >60 ;
+
+-- STORED PROCEDURES
+
+-- CREATING THE STORED PROCEDURE:
+
+ DELIMITER //
+ CREATE PROCEDURE average_marks()
+ BEGIN    
+Select s.stud_id, s.stud_name, s.city_state, s.age, s.community, c.course_id, c.course_name,m.finance, m.cost, 
+m.corporate,    
+ (m.finance + m.cost + m.corporate) as Total_marks, 
+Round((m.finance + m.cost + m.corporate) / 3, 0) as Average_marks 
+from student_information as s INNER JOIN Course_information as c ON s.course_id = c.course_id   
+INNER JOIN marks_info as m ON s.stud_id = m.stud_id;
+ END //
+ DELIMITER ; 
+
+-- Call the Stored Procedure:
+
+CALL average_marks();
+
+-- TRIGGERS
+
+
+-- (Before Insert )Created a new column to view the  trigger result, alter table marks_info add column result varchar(20);
+
+ delimiter //
+ create trigger result before insert on marks_info for each row 
+Begin
+ if new.finance and new.cost and new.corporate  >=35 then set new.result = 'Pass’;
+ else set new.result = 'RA’;
+ END IF;
+ end //
+ delimiter ;
+
+-- cleaning 
+
+-- Identify Duplicate Rows in student_information:
+
+SELECT *
+FROM student_information
+WHERE (Stud_Name, City_State, Age, Roll_no, Community, Course_ID) IN (
+    SELECT Stud_Name, City_State, Age, Roll_no, Community, Course_ID
+    FROM student_information
+    GROUP BY Stud_Name, City_State, Age, Roll_no, Community, Course_ID
+    HAVING COUNT(*) > 1
+);
+
+
+-- Handle Missing Values:
+
+-- Identify rows with missing values in Age column
+
+SELECT *
+FROM student_information
+WHERE Age IS NULL;
+
+-- Replace missing values with a default value (e.g., 0) in Age column
+
+UPDATE student_information
+SET Age = 0
+WHERE Age IS NULL;
+
+-- Join Tables to Get Information:
+
+-- Get information about students along with their course details
+SELECT s.*, c.course_name
+FROM student_information s
+JOIN course_information c ON s.Course_ID = c.course_id;
+
+
+-- Aggregate Data - Calculate Average Finance Marks:
+
+-- Calculate average finance marks for each student
+SELECT student_id, AVG(finance) AS avg_finance
+FROM marks_info
+GROUP BY student_id;
+
+
+-- -- Update incorrect community values in student_information
+
+UPDATE student_information
+SET Community = 'mcb'
+WHERE Community = 'MBC';
+
+-- Basic Queries for Analysis:
+
+-- Retrieve All Students:
+
+SELECT * FROM student_information;
+
+
+-- Retrieve Courses:
+
+SELECT * FROM course_information;
+
+-- Retrieve Marks:
+
+SELECT * FROM marks_info;
+
+-- Calculate Average Marks:
+
+SELECT student_id, AVG(finance) AS avg_finance, AVG(cost) AS avg_cost, AVG(corporate) AS avg_corporate
+FROM marks_info
+GROUP BY student_id;
+
+-- Joining Tables:
+
+SELECT s.Stud_id, s.Stud_Name, c.course_name, m.finance, m.cost, m.corporate
+FROM student_information s
+JOIN course_information c ON s.Course_ID = c.course_id
+JOIN marks_info m ON s.Stud_id = m.student_id;
+
+
+-- Count Students by Community:
+
+SELECT Community, COUNT(*) as StudentCount
+FROM student_information
+GROUP BY Community;
+
+
+-- Find Courses with Maximum Students:
+
+SELECT c.course_name, COUNT(s.Stud_id) as StudentCount
+FROM course_information c
+LEFT JOIN student_information s ON c.course_id = s.Course_ID
+GROUP BY c.course_name
+ORDER BY StudentCount DESC;
+
+
+-- Calculate Total Marks for Each Student:
+
+SELECT s.Stud_Name, SUM(m.finance + m.cost + m.corporate) as TotalMarks
+FROM student_information s
+JOIN marks_info m ON s.Stud_id = m.student_id
+GROUP BY s.Stud_Name;
+
+
+-- Identify Students with Low Marks:
+
+SELECT s.Stud_Name, m.finance, m.cost, m.corporate
+FROM student_information s
+JOIN marks_info m ON s.Stud_id = m.student_id
+WHERE m.finance < 40 OR m.cost < 40 OR m.corporate < 40;
+
+
+-- Calculate Average Marks by Course:
+
+SELECT c.course_name, AVG(m.finance) as avg_finance, AVG(m.cost) as avg_cost, AVG(m.corporate) as avg_corporate
+FROM course_information c
+LEFT JOIN student_information s ON c.course_id = s.Course_ID
+LEFT JOIN marks_info m ON s.Stud_id = m.student_id
+GROUP BY c.course_name;
+
+-- Identify Top-Performing Students:
+
+SELECT s.Stud_Name, AVG(m.finance + m.cost + m.corporate) as AverageMarks
+FROM student_information s
+JOIN marks_info m ON s.Stud_id = m.student_id
+GROUP BY s.Stud_Name
+HAVING AverageMarks > 80;
+
+
+-- Calculate Pass Percentage by Community:
+
+SELECT Community,
+       COUNT(CASE WHEN m.finance >= 35 AND m.cost >= 35 AND m.corporate >= 35 THEN 1 END) AS PassCount,
+       COUNT(*) AS TotalCount,
+       ROUND(AVG(CASE WHEN m.finance >= 35 AND m.cost >= 35 AND m.corporate >= 35 THEN 100 ELSE 0 END), 2) AS PassPercentage
+FROM student_information s
+LEFT JOIN marks_info m ON s.Stud_id = m.student_id
+GROUP BY Community;
+
+--  Calculate Average Age by Course:
+
+SELECT c.course_name, AVG(s.Age) as avg_age
+FROM course_information c
+LEFT JOIN student_information s ON c.course_id = s.Course_ID
+GROUP BY c.course_name;
+
+
